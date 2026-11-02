@@ -79,7 +79,15 @@ public partial class CoursesViewModel : ViewModelBase
     try
         {
             await _courseServices.Add(course);
-            Courses.Add(course);
+            var savedCourses = await _courseServices.List();
+            Courses.Clear();
+
+            foreach (var savedCourse in savedCourses)
+            {
+                Courses.Add(savedCourse);
+            }
+
+            
             NewCourseNumber = "";
             NewCourseTitle= "";
             NewIsItOnline = false;
