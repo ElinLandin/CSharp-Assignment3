@@ -19,4 +19,10 @@ public class CourseServices
         using var httpService = new HttpService<Courses>();
         await httpService.Post("courses", course);
     }
+
+    public async Task Delete(string id)
+    {
+        using var httpService = new HttpService<Courses>();
+        await httpService.Delete("courses", id);
+    }
 }

@@ -42,7 +42,8 @@ public class HttpService<T> : IDisposable where T : class
     {
         try
         {
-            await _httpClient.DeleteAsync($"{_baseUrl}/{resource}/{id}");
+            var response = await _httpClient.DeleteAsync($"{_baseUrl}/{resource}/{id}");
+            response.EnsureSuccessStatusCode();
         }
         catch (Exception ex)
         {

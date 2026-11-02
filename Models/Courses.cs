@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace WestcoastEducationDesktop.Models;
 
@@ -18,6 +19,10 @@ public class Courses
         public string Topic { get; set; } = "";
     }
 
+    [JsonPropertyName("_id")]
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? Id { get; set; }
+    
 //---------------------------------------------------------------------
 
     public required string CourseNumber { get; set; }

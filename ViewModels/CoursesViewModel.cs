@@ -94,8 +94,12 @@ public partial class CoursesViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    private void DeleteCourse(Courses course)
+    private async Task DeleteCourse(Courses course)
     {
+        if (string.IsNullOrWhiteSpace(course.Id))
+            return;
+
+        await _courseServices.Delete(course.Id);
         Courses.Remove(course);
     }
 
