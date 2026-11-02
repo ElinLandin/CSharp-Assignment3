@@ -1,13 +1,44 @@
 <UserControl    xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:vm="using:WestcoastEducationDesktop.ViewModels"
+                xmlns:Models="using:WestcoastEducationDesktop.Models"
                 x:Class="WestcoastEducationDesktop.Views.CoursesView"
                 x:DataType="vm:CoursesViewModel">
             
         <StackPanel Spacing="10">
             <TextBlock Text="Kurser" FontSize="24" />
 
-            <ListBox ItemsSource="{Binding Courses}" />
+            <TextBlock Text="Kursnummer" />
+            <TextBox Text="{Binding NewCourseNumber}" />
+
+            <TextBlock Text="Kurstitel" />
+            <TextBox Text="{Binding NewCourseTitle}" />
+
+            <Button Content="Lägg till kurs"
+                    Command="{Binding AddCourseCommand}" />
+
+            <ItemsControl ItemsSource="{Binding Courses}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="Models:Courses">
+
+                        <Grid ColumnDefinitions="100,*,80">
+
+                            <TextBlock Text="{Binding CourseNumber}" />
+
+                            <TextBlock Grid.Column="1"
+                                       Text="{Binding CourseTitle}" />
+
+                            <Button Grid.Column="2"
+                                    Content="🗑️"
+                                    Command="{Binding $parent[UserControl].((vm:CoursesViewModel)DataContext).DeleteCourseCommand}"
+                                    CommandParameter="{Binding}" />
+
+
+                        </Grid>
+                        
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
 
         </StackPanel>
 
