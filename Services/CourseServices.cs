@@ -13,4 +13,10 @@ public class CourseServices
         using var httpService = new HttpService<Courses>();
         return await httpService.Get("courses");
     }
+
+    public async Task Add(Courses course)
+    {
+        using var httpService = new HttpService<Courses>();
+        await httpService.Post("courses", course);
+    }
 }

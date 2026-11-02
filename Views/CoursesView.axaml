@@ -14,6 +14,15 @@
             <TextBlock Text="Kurstitel" />
             <TextBox Text="{Binding NewCourseTitle}" />
 
+            <CheckBox Content="Distansundervisning"
+                      IsChecked="{Binding NewIsItOnline}" />
+
+            <TextBlock Text="Kursstart" />
+            <DatePicker SelectedDate="{Binding NewStartDate}" />
+
+            <TextBlock Text="Kursslut" />
+            <DatePicker SelectedDate="{Binding NewEndDate}" />
+
             <Button Content="Lägg till kurs"
                     Command="{Binding AddCourseCommand}" />
 
