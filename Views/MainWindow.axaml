@@ -15,8 +15,20 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
+    <Grid ColumnDefinitions="180,*">
+
+        <StackPanel Grid.Column="0" Spacing="10" Margin="10">
+            <TextBlock Text="Westcoast Education" FontSize="18" />
+
+            <Button Content="Kurser" />
+            <Button Content="Studenter" />
+            <Button Content="Lärare" />
+        </StackPanel>
+
+        <TextBlock Grid.Column="1"
+                    Text="Välkommen till Westcoast Education!"
+                    Margin="20" />
+
+    </Grid>
 
 </Window>
