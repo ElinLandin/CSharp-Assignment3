@@ -17,17 +17,17 @@
     <Grid ColumnDefinitions="180,*">
 
         <StackPanel Grid.Column="0" Spacing="15" Margin="10">
-            <TextBlock Text="Westcoast Education" FontSize="15" />
+            <TextBlock Text="Westcoast Education" FontSize= "16" />
 
             <Button Content="Kurser" Command="{Binding GoToCoursesCommand}" />
             <Button Content="Studenter" Command="{Binding GoToStudentsCommand}" />
             <Button Content="Lärare" Command="{Binding GoToTeachersCommand}" />
         </StackPanel>
-<!--
+
         <ContentControl Grid.Column="1"
                     Content="{Binding CurrentView}"
                     Margin="20" />
--->
+
     </Grid>
 
 </Window>

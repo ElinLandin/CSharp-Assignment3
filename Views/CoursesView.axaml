@@ -1,0 +1,15 @@
+<UserControl    xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:vm="using:WestcoastEducationDesktop.ViewModels"
+                x:Class="WestcoastEducationDesktop.Views.CoursesView"
+                x:DataType="vm:CoursesViewModel">
+            
+        <StackPanel Spacing="10">
+            <TextBlock Text="Kurser" FontSize="24" />
+
+            <ListBox ItemsSource="{Binding Courses}" />
+
+        </StackPanel>
+
+
+</UserControl>

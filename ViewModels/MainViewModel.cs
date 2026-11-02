@@ -6,25 +6,26 @@ namespace WestcoastEducationDesktop.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
+
     [ObservableProperty]
-    public partial string Greeting { get; set; } = "Welcome to Avalonia!";
+    public partial object CurrentView { get; set; } = new CoursesViewModel();
 
     [RelayCommand]
     private void GoToCourses()
     {
-        
+        CurrentView = new CoursesViewModel();
     }
 
     [RelayCommand]
     private void GoToStudents()
     {
-        
+        CurrentView = "Studenter";
     }
 
     [RelayCommand]
     private void GoToTeachers()
     {
-        
+        CurrentView = "Lärare";
     }
 
 }
