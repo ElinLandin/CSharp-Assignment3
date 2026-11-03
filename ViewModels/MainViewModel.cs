@@ -25,7 +25,7 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     private void GoToTeachers()
     {
-        CurrentView = "Lärare";
+        CurrentView = new TeachersViewModel();
     }
 
 }
