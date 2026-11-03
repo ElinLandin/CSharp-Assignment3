@@ -10,7 +10,7 @@ public class StudentServices
         public async Task<List<Student>> List()
     {
         using var httpService = new HttpService<Student>();
-        return await httpService.Get("teachers");
+        return await httpService.Get("students");
     }
 
     public async Task Add(Student student)
