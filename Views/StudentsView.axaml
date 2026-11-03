@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:WestcoastEducationDesktop.ViewModels"
+             xmlns:models="using:WestcoastEducationDesktop.Models"
+             x:Class="WestcoastEducationDesktop.Views.StudentsView"
+             x:DataType="vm:StudentsViewModel">
+
+  <StackPanel Spacing="10">
+      <TextBlock Text="Studenter" FontSize="24" />
+
+      <TextBlock Text="Förnamn" />
+      <TextBox Text="{Binding NewFirstName}" />
+
+      <TextBlock Text="Efternamn" />
+      <TextBox Text="{Binding NewLastName}" />
+
+      <TextBlock Text="Personnummer" />
+      <TextBox Text="{Binding NewPersonalIdNumber}" />
+
+      <Button Content="Lägg till student"
+              Command="{Binding AddStudentCommand}" />
+
+      <ItemsControl ItemsSource="{Binding Students}">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <StackPanel Orientation="Horizontal" Spacing="15">
+              <TextBlock Text="{Binding FirstName}" />
+              <TextBlock Text="{Binding LastName}" />
+              <TextBlock Text="{Binding PersonalIdNumber}" />
+
+              </StackPanel>
+          </DataTemplate>
+      </ItemsControl.ItemTemplate>
+      </ItemsControl>
+  </StackPanel>
+</UserControl>
