@@ -6,7 +6,7 @@
                 x:DataType="vm:CoursesViewModel">
             
         <StackPanel Spacing="10">
-            <TextBlock Text="Kurser" FontSize="24" />
+            <TextBlock Text="Kurser" FontSize="24" Foreground="{DynamicResource ForegroundColor}" Background="{DynamicResource BackgroundColor}" />
 
             <TextBlock Text="Kursnummer" />
             <TextBox Text="{Binding NewCourseNumber}" />
@@ -24,7 +24,8 @@
             <DatePicker SelectedDate="{Binding NewEndDate}" />
 
             <Button Content="Lägg till kurs"
-                    Command="{Binding AddCourseCommand}" />
+                    Command="{Binding AddCourseCommand}" 
+                    Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}" />
 
             <ItemsControl ItemsSource="{Binding Courses}">
                 <ItemsControl.ItemTemplate>

@@ -6,7 +6,7 @@
              x:DataType="vm:StudentsViewModel">
 
   <StackPanel Spacing="10">
-      <TextBlock Text="Studenter" FontSize="24" />
+      <TextBlock Text="Studenter" FontSize="24" Foreground="{DynamicResource ForegroundColor}" Background="{DynamicResource BackgroundColor}" />
 
       <TextBlock Text="Förnamn" />
       <TextBox Text="{Binding NewFirstName}" />
@@ -18,7 +18,8 @@
       <TextBox Text="{Binding NewPersonalIdNumber}" />
 
       <Button Content="Lägg till student"
-              Command="{Binding AddStudentCommand}" />
+              Command="{Binding AddStudentCommand}"
+              Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}" />
 
       <ItemsControl ItemsSource="{Binding Students}">
         <ItemsControl.ItemTemplate>

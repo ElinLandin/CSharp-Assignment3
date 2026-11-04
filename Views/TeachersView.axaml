@@ -5,7 +5,7 @@
              x:Class="WestcoastEducationDesktop.Views.TeachersView">
 
   <StackPanel Spacing="10">
-      <TextBlock Text="Lärare" FontSize="24" />
+      <TextBlock Text="Lärare" FontSize="24" Foreground="{DynamicResource ForegroundColor}" Background="{DynamicResource BackgroundColor}" />
 
       <TextBlock Text="Förnamn" />
       <TextBox Text="{Binding NewFirstName}" />
@@ -20,7 +20,8 @@
       <TextBox Text="{Binding NewAreaOfExpertise}" />
 
       <Button Content="Lägg till lärare"
-              Command="{Binding AddTeacherCommand}" />
+              Command="{Binding AddTeacherCommand}"
+              Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}" />
 
       <ItemsControl ItemsSource="{Binding Teachers}">
         <ItemsControl.ItemTemplate>

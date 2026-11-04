@@ -19,9 +19,9 @@
         <StackPanel Grid.Column="0" Spacing="15" Margin="10">
             <TextBlock Text="Westcoast Education" FontSize= "16" />
 
-            <Button Content="Kurser" Command="{Binding GoToCoursesCommand}" />
-            <Button Content="Studenter" Command="{Binding GoToStudentsCommand}" />
-            <Button Content="Lärare" Command="{Binding GoToTeachersCommand}" />
+            <Button Content="Kurser" Command="{Binding GoToCoursesCommand}" Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}"/>
+            <Button Content="Studenter" Command="{Binding GoToStudentsCommand}" Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}"/>
+            <Button Content="Lärare" Command="{Binding GoToTeachersCommand}" Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}"/>
         </StackPanel>
 
         <ContentControl Grid.Column="1"
