@@ -115,7 +115,7 @@ public class HttpService<T> : IDisposable where T : class
         {
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            var response = await _httpClient.PostAsJsonAsync<T>($"{_baseUrl}/{resource}", data);
+            var response = await _httpClient.PutAsJsonAsync<T>($"{_baseUrl}/{resource}/{objectId}", data);
             response.EnsureSuccessStatusCode();
         }
         catch (HttpRequestException ex)

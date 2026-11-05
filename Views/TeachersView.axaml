@@ -27,10 +27,14 @@
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <StackPanel Orientation="Horizontal" Spacing="15">
+
               <TextBlock Text="{Binding FirstName}" />
               <TextBlock Text="{Binding LastName}" />
               <TextBlock Text="{Binding PersonalIdNumber}" />
-              <TextBlock Text="{Binding AreaOfExpertise}" />
+
+              <TextBox Width="160" Text="{Binding AreaOfExpertise, Mode=TwoWay}" />
+              <Button Content="Spara kompetens" Command="{Binding $parent[UserControl].((vm:TeachersViewModel)DataContext).UpdateTeacherCommand}"
+                      CommandParameter="{Binding}" Background="{DynamicResource AccentBrush}" Foreground="{DynamicResource ForegroundColor}" />
 
             </StackPanel>
           </DataTemplate>

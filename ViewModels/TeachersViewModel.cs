@@ -86,4 +86,17 @@ public partial class TeachersViewModel : ViewModelBase
         }
     }
 
+    [RelayCommand]
+    private async Task UpdateTeacher(Teacher teacher)
+    {
+        try
+        {
+            await _teacherServices.Update(teacher);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Fel: " + ex.Message);
+        }
+    }
+
 }

@@ -18,4 +18,12 @@ public class TeacherServices
         using var httpService = new HttpService<Teacher>();
         await httpService.Post("teachers", teacher);
     }
+
+    public async Task Update(Teacher teacher)
+    {
+        if (teacher.Id == null) return;
+
+        using var httpService = new HttpService<Teacher>();
+        await httpService.Put("teachers", teacher, teacher.Id);
+    }
 }
