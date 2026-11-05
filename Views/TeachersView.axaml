@@ -28,9 +28,9 @@
           <DataTemplate>
             <StackPanel Orientation="Horizontal" Spacing="15">
 
-              <TextBlock Text="{Binding FirstName}" />
-              <TextBlock Text="{Binding LastName}" />
-              <TextBlock Text="{Binding PersonalIdNumber}" />
+              <TextBlock Text="{Binding FirstName}" FontSize="16" />
+              <TextBlock Text="{Binding LastName}" FontSize="16" />
+              <TextBlock Text="{Binding PersonalIdNumber}" FontSize="16" />
 
               <TextBox Width="160" Text="{Binding AreaOfExpertise, Mode=TwoWay}" />
               <Button Content="Spara kompetens" Command="{Binding $parent[UserControl].((vm:TeachersViewModel)DataContext).UpdateTeacherCommand}"
