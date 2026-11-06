@@ -1,23 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace WestcoastEducationDesktop.Models;
 
 public class Courses
 {
-    private List<CourseContent> courseContent =[];
-
-    public void AddCourseContent(string topic)
-    {
-        courseContent.Add(new CourseContent { Topic = topic });
-    }
-
-    private class CourseContent
-    {
-        public string Topic { get; set; } = "";
-    }
 
     [JsonPropertyName("_id")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -57,8 +44,7 @@ public class Courses
         }
 
         return  $"Kursnummer: {CourseNumber}, Kurstitel: {CourseTitle}, Kurslängd: {GetCourseLength()}, " +
-                $"Startdatum: {StartDate:yyyy-MM-dd} Slutdatum: {EndDate:yyyy-MM-dd} Kursform: {courseFormat}, " +
-                $"Kursinnehåll: {string.Join(", ", courseContent.Select(c => c.Topic))}";
+                $"Startdatum: {StartDate:yyyy-MM-dd} Slutdatum: {EndDate:yyyy-MM-dd} Kursform: {courseFormat}";
     }
 
 }

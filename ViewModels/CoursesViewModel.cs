@@ -36,18 +36,8 @@ public partial class CoursesViewModel : ViewModelBase
         }
     }
 
-    public ObservableCollection<Courses> Courses { get; } = new()
-    {
-        new Courses
-        {
-            CourseNumber = "CS101",
-            CourseTitle = "Programmering",
-            StartDate = new DateTime(2027, 1, 25),
-            EndDate = new DateTime(2027, 3, 22),
-            IsItOnline = false
-        }
+    public ObservableCollection<Courses> Courses { get; } = [];
 
-    };
 
     [ObservableProperty]
     public partial string NewCourseNumber { get; set; } = "";
